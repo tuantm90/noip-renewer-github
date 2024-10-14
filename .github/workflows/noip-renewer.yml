@@ -18,6 +18,8 @@ jobs:
 
     - name: Process NO-IP accounts
       run: |
+        docker pull simaofsilva/noip-renewer:latest
+      
         username1="${{ secrets.NO_IP_USERNAME_1 }}"
         password1="${{ secrets.NO_IP_PASSWORD_1 }}"
         totp_key1="${{ secrets.NO_IP_TOTP_KEY_1 }}"
