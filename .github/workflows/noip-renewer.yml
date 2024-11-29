@@ -16,10 +16,12 @@ jobs:
     - name: Set up Docker
       uses: docker/setup-buildx-action@v2
 
+    - name: Docker Pull
+      run: docker pull simaofsilva/noip-renewer:latest
+
     - name: Process NO-IP accounts
       run: |
-        docker pull simaofsilva/noip-renewer:latest
-      
+
         username1="${{ secrets.NO_IP_USERNAME_1 }}"
         password1="${{ secrets.NO_IP_PASSWORD_1 }}"
         totp_key1="${{ secrets.NO_IP_TOTP_KEY_1 }}"
